@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --pacman-yellow: #ffff00;
+    --ghost-blue: #00ffff;
+    --maze-blue: #2121ff;
+    --dark: #000;
+}
+
+* {
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--pacman-yellow);
+    background-image: 
+        radial-gradient(var(--pacman-yellow) 2px, transparent 2px);
+    background-size: 30px 30px;
+}
+
+/* Navbar styles */
+#navbar {
+    padding: 0.5em 2em;
+    margin: 1em 4em 0 4em;
+    border: 4px solid var(--maze-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark);
+    position: relative;
+    overflow: hidden;
+}
+
+#navbar::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--pacman-yellow);
+    border-radius: 50%;
+    animation: pacman 8s linear infinite;
+    left: -20px;
+}
+
+#navbar a {
+    color: var(--ghost-blue);
+    text-shadow: 2px 2px var(--dark);
+    position: relative;
+}
+
+#navbar a:hover {
+    color: var(--pacman-yellow);
+    animation: blink 0.5s infinite;
+}
+
+#navbarright {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hero section */
+#hero {
+    border: 4px solid var(--maze-blue);
+    background-color: rgba(0, 0, 0, 0.9);
+    position: relative;
+}
+
+#heroleft {
+    background-color: var(--dark);
+    border-right: 4px dotted var(--maze-blue);
+}
+
+#heroheading {
+    color: var(--pacman-yellow);
+    animation: blink 2s infinite;
+}
+
+#herosubheading {
+    color: var(--ghost-blue);
+}
+
+/* Social links */
+.sociallinks {
+    background-color: var(--dark);
+    border: 2px solid var(--maze-blue);
+    color: var(--ghost-blue) !important;
+}
+
+.sociallinks:hover {
+    background-color: var(--maze-blue);
+    color: var(--pacman-yellow) !important;
+    transform: scale(1.1);
+}
+
+.sociallinks img {
+    filter: invert(75%) sepia(100%) saturate(1000%) hue-rotate(140deg);
+}
+
+/* Buttons */
+#resumebutton, #terminalbutton {
+    background-color: var(--dark);
+    color: var(--pacman-yellow);
+    border: 2px solid var(--maze-blue);
+    position: relative;
+    overflow: hidden;
+}
+
+#resumebutton:hover, #terminalbutton:hover {
+    background-color: var(--maze-blue);
+    animation: powerPellet 0.5s infinite;
+}
+
+#terminalbutton {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    z-index: 1;
+    padding: 0.8em 1.2em;
+    font-size: 0.8em;
+    width: auto;
+}
+
+/* Animations */
+@keyframes pacman {
+    0% { left: -20px; }
+    100% { left: 100%; }
+}
+
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0.5; }
+}
+
+@keyframes powerPellet {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Hero right image */
+#heroright {
+    background-color: var(--dark);
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+#heroright img {
+    border: 4px dotted var(--maze-blue);
+    opacity: 0.8;
+    width: 100%;
+    height: calc(100% - 60px); /* Leaves space for terminal button */
+    object-fit: cover;
+}
+
+/* Add maze corners */
+#hero::before,
+#hero::after,
+#navbar::before,
+#navbar::after {
+    content: "•";
+    position: absolute;
+    color: var(--pacman-yellow);
+    font-size: 2em;
+}
+
+#hero::before { top: -10px; left: -10px; }
+#hero::after { top: -10px; right: -10px; }
+#navbar::before { bottom: -10px; left: -10px; }
+#navbar::after { bottom: -10px; right: -10px; }
+
+/* Ghostly hover effect */
+#navbarright a::after {
+    content: "👻";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+#navbarright a:hover::after {
+    opacity: 1;
+    top: -25px;
+}

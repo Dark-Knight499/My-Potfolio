@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* General styles */
+* {
+    font-family: 'Press Start 2P', cursive;
+    image-rendering: pixelated;
+}
+
+body {
+    background-color: #0f0f0f;
+    color: #32ff32;
+    text-shadow: 2px 2px #001100;
+}
+
+/* Navbar styles */
+#navbar {
+    padding: 0.5em 2em;
+    display: flex;
+    height: 4em;
+    justify-content: space-between;
+    align-items: center; 
+    margin: 1em 4em 0 4em;
+    border: 4px solid #32ff32;
+    box-shadow: 4px 4px 0 #001100;
+    background-color: #000;
+}
+
+#navbarright {
+    width: 30%;  /* Increased width to prevent overflow */
+}
+
+#navbar a {
+    color: #32ff32;
+    text-decoration: none;
+    margin: 0 10px;
+    position: relative;
+}
+
+#navbar a:hover {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 0 5px #32ff32;
+}
+
+/* Hero section styles */
+#hero {
+    display: flex;
+    height: 80vh;
+    margin: 1em 4em;
+    padding: 2em;
+    border: 4px solid #32ff32;
+    box-shadow: 8px 8px 0 #001100;
+    background-color: #111;
+    color: #00FF00;
+}
+
+#heroleft {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-radius: 1em 0em 0em 1em;
+    background-color: #000;
+    border-right: 4px solid #32ff32;
+}
+
+#heroheading {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 2em;
+    color: #32ff32;
+    text-shadow: 4px 4px #001100;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+#herosubheading {
+    font-size: 0.9em;
+    margin: 2em 0;
+    color: #32ff32;
+    line-height: 1.8;
+}
+
+#socials {
+    margin: 2em 0;
+    width: 60%;  /* Wider social links container */
+}
+
+#socials a {
+    color: #00FF00;
+    margin: 0 10px;
+    font-size: 1.5em;
+}
+
+.sociallinks {
+    width: 45px;  /* Slightly larger social icons */
+    height: 45px;
+    margin: 0 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border: 2px solid #32ff32;
+    box-shadow: 2px 2px 0 #001100;
+    transition: all 0.3s ease;
+}
+
+.sociallinks img {
+    filter: brightness(0) invert(1);  /* Makes SVG icon visible */
+    opacity: 0.8;
+}
+
+.sociallinks:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 #001100;
+}
+
+#resumebutton, #terminalbutton {
+    background-color: #000;
+    color: #32ff32;
+    border: 2px solid #32ff32;
+    box-shadow: 4px 4px 0 #001100;
+    font-family: 'Press Start 2P', cursive;
+    transition: all 0.3s ease;
+}
+
+#resumebutton {
+    margin: 2em 0;
+    padding: 1em 2em;
+}
+
+#resumebutton:hover, #terminalbutton:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #001100;
+    background-color: #32ff32;
+    color: #000;
+}
+
+#heroright {
+    background-color: #000;
+    border-left: none;
+}
+
+#heroright img {
+    border: 4px solid #32ff32;
+    box-shadow: 4px 4px 0 #001100;
+    image-rendering: pixelated;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #32ff32;
+    }
+    to {
+        text-shadow: 0 0 10px #32ff32, 0 0 20px #32ff32;
+    }
+}
+
+/* Terminal button specific styles */
+#terminalbutton {
+    font-size: 0.8em;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    padding: 1em;
+}
+
+/* Add scanline effect to the whole page */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 9999;
+}

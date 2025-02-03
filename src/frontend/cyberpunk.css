@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+:root {
+    --neon-pink: #ff2e88;
+    --neon-blue: #00fff9;
+    --neon-purple: #bd00ff;
+    --cyber-black: #0b0b0f;
+}
+
+* {
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background: var(--cyber-black);
+    background-image: 
+        linear-gradient(45deg, rgba(0,255,249,0.1) 1px, transparent 1px),
+        linear-gradient(-45deg, rgba(255,46,136,0.1) 1px, transparent 1px);
+    background-size: 100px 100px;
+}
+
+#navbar {
+    background: rgba(11,11,15,0.8);
+    backdrop-filter: blur(5px);
+    border: 2px solid var(--neon-blue);
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+#navbar a {
+    color: var(--neon-blue);
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0 0 5px var(--neon-blue);
+}
+
+#navbar a:hover {
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink);
+}
+
+#hero {
+    border: 2px solid var(--neon-pink);
+    box-shadow: 0 0 20px var(--neon-pink);
+}
+
+#heroleft {
+    background: rgba(11,11,15,0.8);
+    backdrop-filter: blur(5px);
+}
+
+#heroheading {
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple);
+    animation: glitch 3s infinite;
+}
+
+.sociallinks {
+    border: 2px solid var(--neon-blue);
+    background: transparent;
+    color: var(--neon-blue) !important;
+}
+
+.sociallinks:hover {
+    border-color: var(--neon-pink);
+    color: var(--neon-pink) !important;
+    box-shadow: 0 0 15px var(--neon-pink);
+}
+
+#resumebutton, #terminalbutton {
+    background: transparent;
+    border: 2px solid var(--neon-purple);
+    color: var(--neon-purple);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#resumebutton:hover, #terminalbutton:hover {
+    background: var(--neon-purple);
+    color: var(--cyber-black);
+    box-shadow: 0 0 20px var(--neon-purple);
+}
+
+@keyframes glitch {
+    0% { transform: none; opacity: 1; }
+    7% { transform: skew(-0.5deg, -0.9deg); opacity: 0.75; }
+    10% { transform: none; opacity: 1; }
+    27% { transform: none; opacity: 1; }
+    30% { transform: skew(0.8deg, -0.1deg); opacity: 0.75; }
+    35% { transform: none; opacity: 1; }
+    52% { transform: none; opacity: 1; }
+    55% { transform: skew(-1deg, 0.2deg); opacity: 0.75; }
+    50% { transform: none; opacity: 1; }
+    100% { transform: none; opacity: 1; }
+}

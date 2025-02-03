@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary: #f0f0f0;
+    --text: #2a2a2a;
+    --accent: #5c5c5c;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--primary);
+    color: var(--text);
+}
+
+#navbar {
+    background: transparent;
+    border-bottom: 1px solid var(--accent);
+    border-radius: 0;
+}
+
+#navbar a {
+    color: var(--text);
+    font-weight: 300;
+    position: relative;
+}
+
+#navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--text);
+    transition: width 0.3s ease;
+}
+
+#navbar a:hover::after {
+    width: 100%;
+}
+
+#hero {
+    background: transparent;
+}
+
+#heroleft {
+    background: transparent;
+}
+
+#heroheading {
+    font-weight: 600;
+    font-size: 2.5em;
+    color: var(--text);
+}
+
+#herosubheading {
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--accent);
+}
+
+.sociallinks {
+    background: transparent;
+    border: 1px solid var(--accent);
+    transition: transform 0.3s ease;
+}
+
+.sociallinks:hover {
+    transform: translateY(-3px);
+}
+
+#resumebutton, #terminalbutton {
+    background: var(--text);
+    color: var(--primary);
+    border: none;
+    transition: transform 0.3s ease;
+    font-weight: 300;
+}
+
+#resumebutton:hover, #terminalbutton:hover {
+    color: black;
+    transform: translateY(-2px);
+}
+
+#heroright img {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+/* #heroright:hover img {
+    filter: grayscale(0%);
+} */
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Subtle loading animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#hero > * {
+    animation: fadeIn 0.8s ease-out forwards;
+}
